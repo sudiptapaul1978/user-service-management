@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,7 +22,7 @@ public class UserController {
 	private UserService userService;
 
 	@CrossOrigin
-	@PutMapping("/save")
+	@PostMapping("/register")
 	public Map<String, Object> createUser(@RequestBody UserRequest user) {
 
 		System.out.println("Saving user: " + user);
