@@ -43,7 +43,7 @@ public class UserController {
 	}
 
 	@CrossOrigin
-	@RequestMapping("/login")
+	@PostMapping("/login")
 	public Map<String, Object> login(@RequestParam String userName, @RequestParam String password) {
 		UserRequest user = userService.validateUser(userName, password);
 		Map<String, Object> dataMap = new HashMap<String, Object>();
