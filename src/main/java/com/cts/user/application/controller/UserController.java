@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cts.user.application.common.ApplicationConstants;
 import com.cts.user.application.service.UserService;
+import com.cts.user.application.to.LoginRequest;
 import com.cts.user.application.to.UserRequest;
 
 @RestController
@@ -44,8 +45,8 @@ public class UserController {
 
 	@CrossOrigin
 	@PostMapping("/login")
-	public Map<String, Object> login(@RequestParam String userName, @RequestParam String password) {
-		UserRequest user = userService.validateUser(userName, password);
+	public Map<String, Object> login(@RequestBody LoginRequest loginRequest) {
+		UserRequest user = userService.validateUser(loginRequest.getUserName(), loginRequest.getPassword());
 		Map<String, Object> dataMap = new HashMap<String, Object>();
 		String message = null;
 		String status = ApplicationConstants.ERROR;
