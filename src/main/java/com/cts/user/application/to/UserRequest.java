@@ -147,20 +147,38 @@ public class UserRequest {
 	public void setPolicies(List<UserPolicy> policies) {
 		this.policies = policies;
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
+
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("UserRequest [userName=").append(userName).append(", password=").append(password)
-				.append(", firstName=").append(firstName).append(", lastName=").append(lastName)
-				.append(", dateOfBirth=").append(dateOfBirth).append(", address=").append(address)
-				.append(", contactNo=").append(contactNo).append(", emailAddress=").append(emailAddress)
-				.append(", role=").append(role).append(", userError=").append(userError).append(", policies=")
-				.append(policies).append("]");
+		builder.append("UserRequest [");
+		if (userName != null)
+			builder.append("userName=").append(userName).append(", ");
+		if (password != null)
+			builder.append("password=").append(password).append(", ");
+		if (firstName != null)
+			builder.append("firstName=").append(firstName).append(", ");
+		if (lastName != null)
+			builder.append("lastName=").append(lastName).append(", ");
+		if (dateOfBirth != null)
+			builder.append("dateOfBirth=").append(dateOfBirth).append(", ");
+		if (address != null)
+			builder.append("address=").append(address).append(", ");
+		if (contactNo != null)
+			builder.append("contactNo=").append(contactNo).append(", ");
+		if (emailAddress != null)
+			builder.append("emailAddress=").append(emailAddress).append(", ");
+		if (role != null)
+			builder.append("role=").append(role).append(", ");
+		if (userError != null)
+			builder.append("userError=").append(userError).append(", ");
+		if (policies != null)
+			builder.append("policies=").append(policies);
+		builder.append("]");
 		return builder.toString();
 	}
+
 	
 	
 }

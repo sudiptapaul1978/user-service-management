@@ -46,6 +46,7 @@ public class UserController {
 	@CrossOrigin
 	@PostMapping("/login")
 	public Map<String, Object> login(@RequestBody LoginRequest loginRequest) {
+		System.out.println("login ..");
 		UserRequest user = userService.validateUser(loginRequest.getUserName(), loginRequest.getPassword());
 		Map<String, Object> dataMap = new HashMap<String, Object>();
 		String message = null;
@@ -96,7 +97,7 @@ public class UserController {
 		Map<String, Object> dataMap = new HashMap<String, Object>();
 		UserRequest adminUser = userService.createAdmin();
 
-		dataMap.put(ApplicationConstants.RESPONSE_MESSAGE, "User Policy Added Successfully");
+		dataMap.put(ApplicationConstants.RESPONSE_MESSAGE, "Admin User Added Successfully");
 		dataMap.put(ApplicationConstants.RESPONSE_STATUS, adminUser != null ? ApplicationConstants.SUCCESS : ApplicationConstants.ERROR);
 		
 		dataMap.put(ApplicationConstants.RESPONSE_OBJECT_USER, adminUser);

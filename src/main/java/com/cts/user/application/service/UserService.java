@@ -179,6 +179,25 @@ public class UserService {
 	}
 	
 	/**
+	 * This return back the user by name. This is a test method
+	 * @param userName
+	 * @return
+	 */
+	public UserRequest getUserByUsername(String userName) {
+		User user =  null;
+		UserRequest userRequest = null;
+		try {
+			user = userRepository.findOne(userName);
+			if(user != null) {
+				userRequest = convertToUserRequestObject(user);
+			}
+		}catch(Exception exception) {
+			//just ignore
+		}
+		return userRequest;
+	}
+	
+	/**
 	 * This method creates UserRequest object based on the database entity
 	 * @param user
 	 * @return
